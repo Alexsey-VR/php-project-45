@@ -1,0 +1,18 @@
+{
+    "name": "hexlet/code",
+    "description": "A question-and-answer console game",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexsey-VR",
+            "email": "vityaz.iss@yandex.ru"
+        }
+    ],
+    "require": {}
+}
