@@ -13,7 +13,7 @@ function Even()
         print_r("Question: {$randValue}\n");
         print_r("Your answer: ");
         $answer = trim(fgets(STDIN));
-        $answer = mb_strtolower($answer);
+        $answer = strtolower($answer);
         $isEven = ($randValue + 1) % 2;
         $correctAnswer = $isEven ? "yes" : "no";
         if (strcmp($answer, $correctAnswer) === 0) {
