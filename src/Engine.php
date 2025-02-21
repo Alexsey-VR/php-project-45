@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games;
 
+const MAX_GAME_ROUNDS = 3;
+
 function MakeQuestionGetAnswer($question): string
 {
     print_r("Question: {$question}\n");

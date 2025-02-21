@@ -15,12 +15,12 @@ function Calc()
 
     print_r("What is the result of the expression?\n");
     $operators = ['+', '-', '*'];
-    foreach ($operators as $operator) {
+    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $a = rand(1, 100);
         $b = rand(1, 100);
-        $question = "{$a} {$operator} {$b}";
+        $question = "{$a} {$operators[$i]} {$b}";
         $answer = MakeQuestionGetAnswer($question);
-        $result = ComputeOperation($a, $b, $operator);
+        $result = ComputeOperation($a, $b, $operators[$i]);
         if (AnswerIsTrue($result, $answer)) {
             print_r("Correct!\n");
         } else {

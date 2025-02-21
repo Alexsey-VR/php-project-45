@@ -8,7 +8,7 @@ function Even()
     $name = trim(fgets(STDIN));
     print_r("Hello, {$name}!\n");
     print_r("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
 
         $randValue = rand(1, 100);
         $answer = MakeQuestionGetAnswer($randValue);
