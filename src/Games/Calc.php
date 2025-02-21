@@ -1,9 +1,10 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\Games;
 
-use BrainGames\Calc\AnswerIsTrue;
-use BrainGames\Calc\Calc;
+use BrainGames\Games\AnswerIsTrue as AnswerIsTrue;
+use BrainGames\Games\MakeQuestionGetAnswer as MakeQuestionGetAnswer;
+use BrainGames\Games\ComputeOperation as ComputeOperation;
 
 function Calc()
 {
@@ -17,7 +18,8 @@ function Calc()
     foreach ($operators as $operator) {
         $a = rand(1, 100);
         $b = rand(1, 100);
-        $answer = MakeQuestion($a, $b, $operator);
+        $question = "{$a} {$operator} {$b}";
+        $answer = MakeQuestionGetAnswer($question);
         $result = ComputeOperation($a, $b, $operator);
         if (AnswerIsTrue($result, $answer)) {
             print_r("Correct!\n");

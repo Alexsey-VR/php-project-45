@@ -1,12 +1,13 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\Games;
 
-function MakeQuestion($leftOperand, $rightOperand, $operator): string
+function MakeQuestionGetAnswer($question): string
 {
-    print_r("Question: {$leftOperand} {$operator} {$rightOperand}\n");
+    print_r("Question: {$question}\n");
     print_r("Your answer: ");
     $answer = trim(fgets(STDIN));
+    $answer = strtolower($answer);
 
     return $answer;
 }
