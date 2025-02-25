@@ -8,10 +8,7 @@ use BrainGames\Games\ComputeOperation as ComputeOperation;
 
 function Calc()
 {
-    print_r("Welcome to the Brain Games!\n");
-    print_r("May I have your name? ");
-    $name = trim(fgets(STDIN));
-    print_r("Hello, {$name}\n");
+    $name = Greeting();
 
     print_r("What is the result of the expression?\n");
     $operators = ['+', '-', '*'];
@@ -22,11 +19,11 @@ function Calc()
         $answer = MakeQuestionGetAnswer($question);
         $result = ComputeOperation($a, $b, $operators[$i]);
         if (AnswerIsTrue($result, $answer)) {
-            print_r("Correct!\n");
+            GoodAnswer();
         } else {
-            print_r("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.\n");
-            print_r("Let's try again, {$name}!\n");
+            BadAnswer($result, $answer, $name);
             return;
         }
     }
+    Congratulations($name);
 }

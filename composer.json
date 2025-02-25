@@ -11,7 +11,8 @@
             "src/Engine.php",
             "src/Cli.php",
             "src/Games/Even.php",
-            "src/Games/Calc.php"
+            "src/Games/Calc.php",
+            "src/Games/Nod.php"
         ]
     },
     "authors": [
@@ -23,7 +24,8 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-nod"
     ],
     "scripts": {
         "phpcs" : "phpcs",
