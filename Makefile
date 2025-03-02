@@ -14,6 +14,9 @@ brain-even:
 brain-calc:
 	php ./bin/brain-calc
 
+brain-nod:
+	php ./bin/brain-nod
+
 validate:
 	composer validate
 
