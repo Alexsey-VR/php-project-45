@@ -4,7 +4,24 @@ namespace BrainGames\Games;
 
 use BrainGames\Games\AnswerIsTrue as AnswerIsTrue;
 use BrainGames\Games\MakeQuestionGetAnswer as MakeQuestionGetAnswer;
-use BrainGames\Games\ComputeOperation as ComputeOperation;
+
+function ComputeOperation($leftOperand, $rightOperand, $operator): string
+{
+    switch ($operator) {
+        case '+':
+            return (string)($leftOperand + $rightOperand);
+            break;
+        case '-':
+            return (string)($leftOperand - $rightOperand);
+            break;
+        case '*':
+            return (string)($leftOperand * $rightOperand);
+            break;
+        default:
+            print_r("Operation '{$operator}' not permited\n");
+    }
+    return null;
+}
 
 function Calc()
 {

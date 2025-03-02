@@ -40,24 +40,6 @@ function MakeQuestionGetAnswer($question): string
     return $answer;
 }
 
-function ComputeOperation($leftOperand, $rightOperand, $operator): string
-{
-    switch ($operator) {
-        case '+':
-            return (string)($leftOperand + $rightOperand);
-            break;
-        case '-':
-            return (string)($leftOperand - $rightOperand);
-            break;
-        case '*':
-            return (string)($leftOperand * $rightOperand);
-            break;
-        default:
-            print_r("Operation '{$operator}' not permited\n");
-    }
-    return null;
-}
-
 function AnswerIsTrue($trueResult, $userResult): bool
 {
     if (strcmp($trueResult, $userResult) === 0) {
