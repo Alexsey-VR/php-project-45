@@ -10,3 +10,6 @@ https://github.com/Alexsey-VR/php-project-45/blob/main/demo-calc.gif
 
 ### Brain game Nod demo:
 https://github.com/Alexsey-VR/php-project-45/blob/main/demo-nod.gif
+
+### Brain game Progression demo:
+https://github.com/Alexsey-VR/php-project-45/blob/main/demo-progression.gif

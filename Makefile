@@ -17,6 +17,9 @@ brain-calc:
 brain-nod:
 	php ./bin/brain-nod
 
+brain-progression:
+	php ./bin/brain-progression
+
 validate:
 	composer validate
 

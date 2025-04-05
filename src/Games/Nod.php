@@ -7,7 +7,7 @@ function getInputsFromEuclidianGcd($a, $b): array
     $input = [$a, $b];
     sort($input);
     $rem = $input[1] % $input[0];
-    $result = [ $input[0] * rand(1,5), ($input[1] + $rem) * rand(1,5) ];
+    $result = [$input[0] * rand(1, 5), ($input[1] + $rem) * rand(1, 5)];
     shuffle($result);
     return $result;
 }
@@ -25,7 +25,8 @@ function getEuclidianGcd($a, $b): int
     return $result;
 }
 
-function Nod() {
+function Nod()
+{
     $name = Greeting();
     print_r("Find the greatest common divisor of given nubers.\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
