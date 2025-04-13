@@ -1,4 +1,4 @@
-** The small console games for mind fitness **
+### The small console games for mind fitness
 
 ### Hexlet tests and linter status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/c1c877db9adc7e722303/maintainability)](https://codeclimate.com/github/Alexsey-VR/php-project-45/maintainability)
