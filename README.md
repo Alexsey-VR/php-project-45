@@ -13,3 +13,6 @@ https://github.com/Alexsey-VR/php-project-45/blob/main/demo-nod.gif
 
 ### Brain game Progression demo:
 https://github.com/Alexsey-VR/php-project-45/blob/main/demo-progression.gif
+
+### Brain game Prime demo:
+https://github.com/Alexsey-VR/php-project-45/blob/main/demo-prime.gif

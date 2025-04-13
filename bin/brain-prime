@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+namespace BrainGames\Games;
+
+require_once __DIR__ . "/../vendor/autoload.php";
+
+use function BrainGames\Games\Prime;
+
+Prime();
