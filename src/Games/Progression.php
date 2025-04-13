@@ -14,12 +14,7 @@ function Progression()
         $result = $range[$gapValue];
         $range[$gapValue] = "...";
         $question = implode(" ", $range);
-/*
-        $inputs = getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10));
-        $question = "{$inputs[0]} {$inputs[1]}";
-*/
         $answer = makeQuestionGetAnswer($question);
-//        $result = getEuclidianGcd($inputs[0], $inputs[1]);
         if (answerIsTrue($result, $answer)) {
             GoodAnswer();
         } else {
