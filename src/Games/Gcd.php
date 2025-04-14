@@ -28,7 +28,7 @@ function getEuclidianGcd($a, $b): int
 function Gcd()
 {
     $name = Greeting();
-    print_r("Find the greatest common divisor of given nubers.\n");
+    print_r("Find the greatest common divisor of given numbers.\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $inputs = getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10));
         $question = "{$inputs[0]} {$inputs[1]}";
