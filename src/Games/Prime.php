@@ -4,10 +4,10 @@ namespace BrainGames\Games;
 
 function isPrimeNumber(int $number): bool
 {
-    if (($number === 3) || ($number === 1)) {
+    if (($number === 1) || ($number === 2)) {
         return true;
     }
-    return (((3 ** ($number - 1)) % $number) === 1) ? true : false;
+    return (((3 ** $number) % $number) === 3) ? true : false;
 }
 
 function prime(): void
