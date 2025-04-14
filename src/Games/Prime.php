@@ -10,7 +10,7 @@ function isPrimeNumber($number)
 function Prime()
 {
     $name = Greeting();
-    print_r("Answer \"yes\" if given number is prime. Otherwise answer \"no\"\n");
+    print_r("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $question = rand(1, 30);
         $answer = makeQuestionGetAnswer($question);
