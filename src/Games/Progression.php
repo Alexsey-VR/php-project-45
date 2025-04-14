@@ -12,7 +12,7 @@ function Progression()
         $range = range($initValue, $initValue + 10 * $stepValue, $stepValue);
         $gapValue = rand(0, 9);
         $result = $range[$gapValue];
-        $range[$gapValue] = "...";
+        $range[$gapValue] = "..";
         $question = implode(" ", $range);
         $answer = makeQuestionGetAnswer($question);
         if (answerIsTrue($result, $answer)) {
