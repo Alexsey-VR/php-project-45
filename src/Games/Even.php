@@ -11,7 +11,7 @@ function even(): void
         $randValue = rand(1, 100);
         $answer = makeQuestionGetAnswer($randValue);
         $isEven = ($randValue + 1) % 2;
-        $correctAnswer = $isEven ? "yes" : "no";
+        $correctAnswer = ($isEven !== 0) ? "yes" : "no";
         if (answerIsTrue($correctAnswer, $answer)) {
             goodAnswer();
         } else {

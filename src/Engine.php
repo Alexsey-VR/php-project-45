@@ -8,7 +8,7 @@ function greeting(): string
 {
     print_r("Welcome to the Brain Games!\n");
     print_r("May I have your name? ");
-    $name = trim(fgets(STDIN) ?? '');
+    $name = trim((string)fgets(STDIN));
     print_r("Hello, {$name}!\n");
 
     return $name;
@@ -19,19 +19,19 @@ function goodAnswer(): void
     print_r("Correct!\n");
 }
 
-function badAnswer($trueResult, $userResult, $name): void
+function badAnswer(string $trueResult, string $userResult, string $name): void
 {
     print_r("'{$userResult}' is wrong answer ;(. ");
     print_r("Correct answer was '{$trueResult}'.\n");
     print_r("Let's try again, {$name}!\n");
 }
 
-function congratulations($name): void
+function congratulations(string $name): void
 {
     print_r("Congratulations, {$name}!\n");
 }
 
-function makeQuestionGetAnswer($question): string
+function makeQuestionGetAnswer(string $question): string
 {
     print_r("Question: {$question}\n");
     print_r("Your answer: ");
@@ -41,7 +41,7 @@ function makeQuestionGetAnswer($question): string
     return $answer;
 }
 
-function answerIsTrue($trueResult, $userResult): bool
+function answerIsTrue(string $trueResult, string $userResult): bool
 {
     if (strcmp($trueResult, $userResult) === 0) {
         return true;

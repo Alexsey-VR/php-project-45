@@ -2,12 +2,12 @@
 
 namespace BrainGames\Games;
 
-function isPrimeNumber($number): bool
+function isPrimeNumber(int $number): bool
 {
     if (($number === 3) || ($number === 1)) {
         return true;
     }
-    return ((3 ** ($number - 1)) % $number) === 1 ? true : false;
+    return (((3 ** ($number - 1)) % $number) === 1) ? true : false;
 }
 
 function prime(): void
