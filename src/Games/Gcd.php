@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games;
 
-function getInputsFromEuclidianGcd($a, $b): array
+function getInputsFromEuclidianGcd(int $a, int $b): array
 {
     $input = [$a, $b];
     sort($input);
@@ -12,7 +12,7 @@ function getInputsFromEuclidianGcd($a, $b): array
     return $result;
 }
 
-function getEuclidianGcd($a, $b): int
+function getEuclidianGcd(int $a, int $b): int
 {
     $input = [$a, $b];
     sort($input);
@@ -25,7 +25,7 @@ function getEuclidianGcd($a, $b): int
     return $result;
 }
 
-function gcd()
+function gcd(): void
 {
     $name = greeting();
     print_r("Find the greatest common divisor of given numbers.\n");

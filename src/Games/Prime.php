@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games;
 
-function isPrimeNumber($number)
+function isPrimeNumber($number): bool
 {
     if (($number === 3) || ($number === 1)) {
         return true;
@@ -10,7 +10,7 @@ function isPrimeNumber($number)
     return ((3 ** ($number - 1)) % $number) === 1 ? true : false;
 }
 
-function prime()
+function prime(): void
 {
     $name = greeting();
     print_r("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");

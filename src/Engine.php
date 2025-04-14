@@ -8,25 +8,25 @@ function greeting(): string
 {
     print_r("Welcome to the Brain Games!\n");
     print_r("May I have your name? ");
-    $name = trim(fgets(STDIN));
+    $name = trim(fgets(STDIN) ?? '');
     print_r("Hello, {$name}!\n");
 
     return $name;
 }
 
-function goodAnswer()
+function goodAnswer(): void
 {
     print_r("Correct!\n");
 }
 
-function badAnswer($trueResult, $userResult, $name)
+function badAnswer($trueResult, $userResult, $name): void
 {
     print_r("'{$userResult}' is wrong answer ;(. ");
     print_r("Correct answer was '{$trueResult}'.\n");
     print_r("Let's try again, {$name}!\n");
 }
 
-function congratulations($name)
+function congratulations($name): void
 {
     print_r("Congratulations, {$name}!\n");
 }

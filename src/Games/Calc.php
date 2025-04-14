@@ -5,7 +5,7 @@ namespace BrainGames\Games;
 use BrainGames\Games\answerIsTrue as answerIsTrue;
 use BrainGames\Games\makeQuestionGetAnswer as makeQuestionGetAnswer;
 
-function computeOperation($leftOperand, $rightOperand, $operator): string
+function computeOperation(int $leftOperand, int $rightOperand, string $operator): string
 {
     switch ($operator) {
         case '+':
@@ -23,7 +23,7 @@ function computeOperation($leftOperand, $rightOperand, $operator): string
     return null;
 }
 
-function calc()
+function calc(): void
 {
     $name = greeting();
 

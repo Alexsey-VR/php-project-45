@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games;
 
-function even()
+function even(): void
 {
     $name = greeting();
 
