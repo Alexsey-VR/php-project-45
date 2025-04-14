@@ -15,10 +15,10 @@ function progression(): void
         $range[$gapValue] = "..";
         $question = implode(" ", $range);
         $answer = makeQuestionGetAnswer($question);
-        if (answerIsTrue((string)$result, (string)$answer)) {
+        if (answerIsTrue((string)$result, $answer)) {
             goodAnswer();
         } else {
-            badAnswer($result, $answer, $name);
+            badAnswer((string)$result, $answer, $name);
             return;
         }
     }

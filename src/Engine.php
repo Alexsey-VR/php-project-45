@@ -36,7 +36,8 @@ function makeQuestionGetAnswer(string $question): string
 {
     print_r("Question: {$question}\n");
     print_r("Your answer: ");
-    $answer = trim(fgets(STDIN));
+    $input = fgets(STDIN);
+    $answer = trim(is_string($input) ? $input : '');
     $answer = strtolower($answer);
 
     return $answer;
