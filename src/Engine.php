@@ -4,7 +4,7 @@ namespace BrainGames\Games;
 
 const MAX_GAME_ROUNDS = 3;
 
-function Greeting(): string
+function greeting(): string
 {
     print_r("Welcome to the Brain Games!\n");
     print_r("May I have your name? ");
@@ -14,23 +14,24 @@ function Greeting(): string
     return $name;
 }
 
-function GoodAnswer()
+function goodAnswer()
 {
     print_r("Correct!\n");
 }
 
-function BadAnswer($trueResult, $userResult, $name)
+function badAnswer($trueResult, $userResult, $name)
 {
-    print_r("'{$userResult}' is wrong answer ;(. Correct answer was '{$trueResult}'.\n");
+    print_r("'{$userResult}' is wrong answer ;(. ");
+    print_r("Correct answer was '{$trueResult}'.\n");
     print_r("Let's try again, {$name}!\n");
 }
 
-function Congratulations($name)
+function congratulations($name)
 {
     print_r("Congratulations, {$name}!\n");
 }
 
-function MakeQuestionGetAnswer($question): string
+function makeQuestionGetAnswer($question): string
 {
     print_r("Question: {$question}\n");
     print_r("Your answer: ");
@@ -40,7 +41,7 @@ function MakeQuestionGetAnswer($question): string
     return $answer;
 }
 
-function AnswerIsTrue($trueResult, $userResult): bool
+function answerIsTrue($trueResult, $userResult): bool
 {
     if (strcmp($trueResult, $userResult) === 0) {
         return true;

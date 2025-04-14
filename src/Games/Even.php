@@ -2,22 +2,22 @@
 
 namespace BrainGames\Games;
 
-function Even()
+function even()
 {
-    $name = Greeting();
+    $name = greeting();
 
     print_r("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $randValue = rand(1, 100);
-        $answer = MakeQuestionGetAnswer($randValue);
+        $answer = makeQuestionGetAnswer($randValue);
         $isEven = ($randValue + 1) % 2;
         $correctAnswer = $isEven ? "yes" : "no";
-        if (AnswerIsTrue($correctAnswer, $answer)) {
-            GoodAnswer();
+        if (answerIsTrue($correctAnswer, $answer)) {
+            goodAnswer();
         } else {
-            BadAnswer($correctAnswer, $answer, $name);
+            badAnswer($correctAnswer, $answer, $name);
             return;
         }
     }
-    Congratulations($name);
+    congratulations($name);
 }

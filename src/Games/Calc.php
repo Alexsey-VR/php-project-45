@@ -2,30 +2,30 @@
 
 namespace BrainGames\Games;
 
-use BrainGames\Games\AnswerIsTrue as AnswerIsTrue;
-use BrainGames\Games\MakeQuestionGetAnswer as MakeQuestionGetAnswer;
+use BrainGames\Games\answerIsTrue as answerIsTrue;
+use BrainGames\Games\makeQuestionGetAnswer as makeQuestionGetAnswer;
 
-function ComputeOperation($leftOperand, $rightOperand, $operator): string
+function computeOperation($leftOperand, $rightOperand, $operator): string
 {
     switch ($operator) {
-        case '+':
-            return (string)($leftOperand + $rightOperand);
-            break;
-        case '-':
-            return (string)($leftOperand - $rightOperand);
-            break;
-        case '*':
-            return (string)($leftOperand * $rightOperand);
-            break;
-        default:
-            print_r("Operation '{$operator}' not permited\n");
+    case '+':
+        return (string)($leftOperand + $rightOperand);
+        break;
+    case '-':
+        return (string)($leftOperand - $rightOperand);
+        break;
+    case '*':
+        return (string)($leftOperand * $rightOperand);
+        break;
+    default:
+        print_r("Operation '{$operator}' not permited\n");
     }
     return null;
 }
 
-function Calc()
+function calc()
 {
-    $name = Greeting();
+    $name = greeting();
 
     print_r("What is the result of the expression?\n");
     $operators = ['+', '-', '*'];
@@ -33,14 +33,14 @@ function Calc()
         $a = rand(1, 100);
         $b = rand(1, 100);
         $question = "{$a} {$operators[$i]} {$b}";
-        $answer = MakeQuestionGetAnswer($question);
-        $result = ComputeOperation($a, $b, $operators[$i]);
-        if (AnswerIsTrue($result, $answer)) {
-            GoodAnswer();
+        $answer = makeQuestionGetAnswer($question);
+        $result = computeOperation($a, $b, $operators[$i]);
+        if (answerIsTrue($result, $answer)) {
+            goodAnswer();
         } else {
-            BadAnswer($result, $answer, $name);
+            badAnswer($result, $answer, $name);
             return;
         }
     }
-    Congratulations($name);
+    congratulations($name);
 }

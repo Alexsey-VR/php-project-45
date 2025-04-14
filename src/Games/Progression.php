@@ -2,9 +2,9 @@
 
 namespace BrainGames\Games;
 
-function Progression()
+function progression()
 {
-    $name = Greeting();
+    $name = greeting();
     print_r("What number is missing in the progression?\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $initValue = rand(1, 20);
@@ -16,11 +16,11 @@ function Progression()
         $question = implode(" ", $range);
         $answer = makeQuestionGetAnswer($question);
         if (answerIsTrue($result, $answer)) {
-            GoodAnswer();
+            goodAnswer();
         } else {
-            BadAnswer($result, $answer, $name);
+            badAnswer($result, $answer, $name);
             return;
         }
     }
-    Congratulations($name);
+    congratulations($name);
 }
