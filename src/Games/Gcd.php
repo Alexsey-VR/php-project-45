@@ -25,7 +25,7 @@ function getEuclidianGcd($a, $b): int
     return $result;
 }
 
-function Nod()
+function Gcd()
 {
     $name = Greeting();
     print_r("Find the greatest common divisor of given nubers.\n");

@@ -5,6 +5,6 @@ namespace BrainGames\Games;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use BrainGames\Games\Nod;
+use BrainGames\Games\Gcd;
 
-Nod();
+Gcd();
