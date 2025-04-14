@@ -34,7 +34,7 @@ function gcd(): void
         $question = "{$inputs[0]} {$inputs[1]}";
         $answer = makeQuestionGetAnswer($question);
         $result = getEuclidianGcd($inputs[0], $inputs[1]);
-        if (answerIsTrue($result, $answer)) {
+        if (answerIsTrue((string)$result, (string)$answer)) {
             goodAnswer();
         } else {
             badAnswer($result, $answer, $name);

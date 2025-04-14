@@ -8,7 +8,8 @@ function greeting(): string
 {
     print_r("Welcome to the Brain Games!\n");
     print_r("May I have your name? ");
-    $name = trim((string)fgets(STDIN));
+    $input = fgets(STDIN);
+    $name = trim(is_string($input) ? $input : '');
     print_r("Hello, {$name}!\n");
 
     return $name;

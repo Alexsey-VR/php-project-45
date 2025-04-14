@@ -16,7 +16,7 @@ function prime(): void
     print_r("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $question = rand(1, 30);
-        $answer = makeQuestionGetAnswer($question);
+        $answer = makeQuestionGetAnswer((string)$question);
         $result = isPrimeNumber($question) ? "yes" : "no";
         if (answerIsTrue($result, $answer)) {
             goodAnswer();
