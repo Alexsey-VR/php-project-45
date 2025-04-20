@@ -25,7 +25,7 @@ function getEuclidianGcd(int $a, int $b): int
     return $result;
 }
 
-function gcd(): void
+function runGcd(): void
 {
     $name = greeting();
     print_r("Find the greatest common divisor of given numbers.\n");

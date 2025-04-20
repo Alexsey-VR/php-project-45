@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games;
 
-function progression(): void
+function runProgression(): void
 {
     $name = greeting();
     print_r("What number is missing in the progression?\n");

@@ -10,7 +10,7 @@ function isPrimeNumber(int $number): bool
     return (((3 ** $number) % $number) === 3) ? true : false;
 }
 
-function prime(): void
+function runPrime(): void
 {
     $name = greeting();
     print_r("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");

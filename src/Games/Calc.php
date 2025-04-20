@@ -20,7 +20,7 @@ function computeOperation(int $leftOperand, int $rightOperand, string $operator)
     return '';
 }
 
-function calc(): void
+function runCalc(): void
 {
     $name = greeting();
 
