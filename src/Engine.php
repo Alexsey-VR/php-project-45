@@ -2,42 +2,47 @@
 
 namespace BrainGames\Games;
 
+use function cli\line;
+use function cli\prompt;
+/*
+function cli(): void
+{
+    line("Welcome to the Brain Games!");
+    $name = prompt("May I have your name?");
+    line("Hello, %s!", $name);
+*/
+
 const MAX_GAME_ROUNDS = 3;
 
 function greeting(): string
 {
-    print_r("Welcome to the Brain Games!\n");
-    print_r("May I have your name? ");
-    $input = fgets(STDIN);
-    $name = trim(is_string($input) ? $input : '');
-    print_r("Hello, {$name}!\n");
+    line("Welcome to the Brain Games!");
+    $name = prompt("May I have your name?");
+    line("Hello, {$name}!");
 
     return $name;
 }
 
 function goodAnswer(): void
 {
-    print_r("Correct!\n");
+    line("Correct!");
 }
 
 function badAnswer(string $trueResult, string $userResult, string $name): void
 {
-    print_r("'{$userResult}' is wrong answer ;(. ");
-    print_r("Correct answer was '{$trueResult}'.\n");
-    print_r("Let's try again, {$name}!\n");
+    line("'{$userResult}' is wrong answer ;(. Correct answer was '{$trueResult}'.");
+    line("Let's try again, {$name}!");
 }
 
 function congratulations(string $name): void
 {
-    print_r("Congratulations, {$name}!\n");
+    line("Congratulations, {$name}!");
 }
 
 function makeQuestionGetAnswer(string $question): string
 {
-    print_r("Question: {$question}\n");
-    print_r("Your answer: ");
-    $input = fgets(STDIN);
-    $answer = trim(is_string($input) ? $input : '');
+    line("Question: {$question}");
+    $answer = prompt("Your answer");
     $answer = strtolower($answer);
 
     return $answer;
