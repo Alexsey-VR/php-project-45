@@ -6,8 +6,8 @@
 [![Actions Status](https://github.com/Alexsey-VR/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Alexsey-VR/php-project-45/actions)
 
 ### List of games:
-..* [Try to determine is even number or not](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-even.gif)
-..* [Calculator. The arithmetic equations to calculate.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-calc.gif)
-..* [Determine the greatest common divisor.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-nod.gif)
-..* [Progression. Find the missing number in a sequence.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-progression.gif)
-..* [Determine is prime number or not.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-prime.gif)
+* [Try to determine is even number or not](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-even.gif)
+* [Calculator. The arithmetic equations to calculate.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-calc.gif)
+* [Determine the greatest common divisor.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-nod.gif)
+* [Progression. Find the missing number in a sequence.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-progression.gif)
+* [Determine is prime number or not.](https://github.com/Alexsey-VR/php-project-45/blob/main/docs/demo-prime.gif)
