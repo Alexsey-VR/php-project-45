@@ -3,7 +3,6 @@
 namespace BrainGames\Games;
 
 use function cli\line;
-
 use function cli\prompt;
 
 const MAX_GAME_ROUNDS = 3;
