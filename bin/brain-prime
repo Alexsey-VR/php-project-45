@@ -5,6 +5,6 @@ namespace BrainGames\Games;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use function BrainGames\Games\Prime;
+use BrainGames\Games\Prime;
 
 runPrime();
