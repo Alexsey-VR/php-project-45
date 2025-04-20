@@ -1,10 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-namespace BrainGames\Games;
-
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use BrainGames\Games\Gcd;
+use function BrainGames\Games\runGcd;
 
 runGcd();

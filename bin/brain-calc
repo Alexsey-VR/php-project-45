@@ -1,11 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-namespace BrainGames\Games;
-
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use BrainGames\Games\Calc;
+use function BrainGames\Games\runCalc;
 
 runCalc();
 
