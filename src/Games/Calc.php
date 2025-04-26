@@ -17,14 +17,14 @@ function computeOperation(
     string $operator
 ): string {
     switch ($operator) {
-    case '+':
-        return (string)($leftOperand + $rightOperand);
-    case '-':
-        return (string)($leftOperand - $rightOperand);
-    case '*':
-        return (string)($leftOperand * $rightOperand);
-    default:
-        print_r("Operation '{$operator}' not permited\n");
+        case '+':
+            return (string)($leftOperand + $rightOperand);
+        case '-':
+            return (string)($leftOperand - $rightOperand);
+        case '*':
+            return (string)($leftOperand * $rightOperand);
+        default:
+            print_r("Operation '{$operator}' not permited\n");
     }
     return '';
 }
