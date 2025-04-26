@@ -2,8 +2,8 @@
 
 namespace BrainGames\Engine;
 
-use function Cli\line;
-use function Cli\prompt;
+use function cli\line;
+use function cli\prompt;
 
 const MAX_GAME_ROUNDS = 3;
 
