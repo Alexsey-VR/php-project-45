@@ -8,6 +8,7 @@ use function BrainGames\Engine\greeting;
 use function BRainGames\Engine\goodAnswer;
 use function BrainGames\Engine\badAnswer;
 use function BrainGames\Engine\congratulations;
+
 use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
 function getInputsFromEuclidianGcd(int $a, int $b): array
