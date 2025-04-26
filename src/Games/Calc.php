@@ -1,9 +1,14 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Calc;
 
-use BrainGames\Games\answerIsTrue as answerIsTrue;
-use BrainGames\Games\makeQuestionGetAnswer as makeQuestionGetAnswer;
+use function BrainGames\Engine\answerIsTrue;
+use function BrainGames\Engine\makeQuestionGetAnswer;
+use function BrainGames\Engine\greeting;
+use function BRainGames\Engine\goodAnswer;
+use function BrainGames\Engine\badAnswer;
+use function BrainGames\Engine\congratulations;
+use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
 function computeOperation(int $leftOperand, int $rightOperand, string $operator): string
 {

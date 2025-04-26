@@ -1,9 +1,9 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Engine;
 
-use function cli\line;
-use function cli\prompt;
+use function Cli\line;
+use function Cli\prompt;
 
 const MAX_GAME_ROUNDS = 3;
 
