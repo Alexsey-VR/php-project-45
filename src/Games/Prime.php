@@ -5,8 +5,7 @@ namespace BrainGames\Games;
 use function BrainGames\Games\answerIsTrue;
 use function BrainGames\Games\makeQuestionGetAnswer;
 use function BrainGames\Games\greeting;
-use function BRainGames\Games\goodAnswer;
-use function BrainGames\Games\badAnswer;
+use function cli\line;
 use function BrainGames\Games\congratulations;
 
 use const BrainGames\Games\MAX_GAME_ROUNDS;
@@ -29,9 +28,10 @@ function runPrime(): void
         $answer = makeQuestionGetAnswer((string)$question);
         $result = isPrimeNumber($question) ? "yes" : "no";
         if (answerIsTrue($result, $answer)) {
-            goodAnswer();
+            line("Correct!");
         } else {
-            badAnswer($result, $answer, $name);
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.");
+            line("Let's try again, {$name}!");
             return;
         }
     }

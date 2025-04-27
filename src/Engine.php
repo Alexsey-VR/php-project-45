@@ -15,12 +15,12 @@ function showGreeting(): string
 
     return $name;
 }
-
+/*
 function goodAnswer(): void
 {
     line("Correct!");
 }
-
+*/
 function badAnswer(string $trueResult, string $userResult, string $name): void
 {
     line("'{$userResult}' is wrong answer ;(. Correct answer was '{$trueResult}'.");

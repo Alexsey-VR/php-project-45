@@ -5,8 +5,7 @@ namespace BrainGames\Games;
 use function BrainGames\Games\answerIsTrue;
 use function BrainGames\Games\makeQuestionGetAnswer;
 use function BrainGames\Games\greeting;
-use function BRainGames\Games\goodAnswer;
-use function BrainGames\Games\badAnswer;
+use function cli\line;
 use function BrainGames\Games\congratulations;
 
 use const BrainGames\Games\MAX_GAME_ROUNDS;
@@ -20,11 +19,12 @@ function runEven(): void
         $randValue = (string)rand(1, 100);
         $answer = makeQuestionGetAnswer($randValue);
         $isEven = ($randValue + 1) % 2;
-        $correctAnswer = ($isEven !== 0) ? "yes" : "no";
-        if (answerIsTrue($correctAnswer, $answer)) {
-            goodAnswer();
+        $result = ($isEven !== 0) ? "yes" : "no";
+        if (answerIsTrue($result, $answer)) {
+            line("Correct!");
         } else {
-            badAnswer($correctAnswer, $answer, $name);
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.");
+            line("Let's try again, {$name}!");
             return;
         }
     }
