@@ -13,7 +13,7 @@ use const BrainGames\Games\MAX_GAME_ROUNDS;
 
 function runEven(): void
 {
-    $name = greeting();
+    $name = showGreeting();
 
     print_r("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {

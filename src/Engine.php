@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const MAX_GAME_ROUNDS = 3;
 
-function greeting(): string
+function showGreeting(): string
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");

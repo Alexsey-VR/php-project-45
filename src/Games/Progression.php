@@ -13,7 +13,7 @@ use const BrainGames\Games\MAX_GAME_ROUNDS;
 
 function runProgression(): void
 {
-    $name = greeting();
+    $name = showGreeting();
     print_r("What number is missing in the progression?\n");
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $initValue = rand(1, 20);

@@ -31,7 +31,7 @@ function computeOperation(
 
 function runCalc(): void
 {
-    $name = greeting();
+    $name = showGreeting();
 
     print_r("What is the result of the expression?\n");
     $operators = ['+', '-', '*'];
