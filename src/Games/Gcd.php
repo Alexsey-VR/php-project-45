@@ -2,14 +2,14 @@
 
 namespace BrainGames\Games;
 
-use function BrainGames\Engine\answerIsTrue;
-use function BrainGames\Engine\makeQuestionGetAnswer;
-use function BrainGames\Engine\greeting;
-use function BRainGames\Engine\goodAnswer;
-use function BrainGames\Engine\badAnswer;
-use function BrainGames\Engine\congratulations;
+use function BrainGames\Games\answerIsTrue;
+use function BrainGames\Games\makeQuestionGetAnswer;
+use function BrainGames\Games\greeting;
+use function BRainGames\Games\goodAnswer;
+use function BrainGames\Games\badAnswer;
+use function BrainGames\Games\congratulations;
 
-use const BrainGames\Engine\MAX_GAME_ROUNDS;
+use const BrainGames\Games\MAX_GAME_ROUNDS;
 
 function getInputsFromEuclidianGcd(int $a, int $b): array
 {
