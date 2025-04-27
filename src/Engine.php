@@ -1,35 +1,19 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
 
 const MAX_GAME_ROUNDS = 3;
 
-function showGreeting(): string
+function getNameAndShowGreeting(): string
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
     line("Hello, {$name}!");
 
     return $name;
-}
-/*
-function goodAnswer(): void
-{
-    line("Correct!");
-}
-*/
-function badAnswer(string $trueResult, string $userResult, string $name): void
-{
-    line("'{$userResult}' is wrong answer ;(. Correct answer was '{$trueResult}'.");
-    line("Let's try again, {$name}!");
-}
-
-function congratulations(string $name): void
-{
-    line("Congratulations, {$name}!");
 }
 
 function makeQuestionGetAnswer(string $question): string
@@ -48,4 +32,21 @@ function answerIsTrue(string $trueResult, string $userResult): bool
     } else {
         return false;
     }
+}
+
+function runEngine($flow) {
+    $name = getNameAndShowGreeting();
+    line($flow['description']);
+
+    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
+        $answer = makeQuestionGetAnswer($flow['questionData'][$i]);
+        if (answerIsTrue($flow['trueResult'][$i], $answer)) {
+            line("Correct!");
+        } else {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$flow['trueResult'][$i]}'.");
+            line("Let's try again, {$name}!");
+            return;
+        }
+    }
+    line("Congratulations, {$name}!");
 }
