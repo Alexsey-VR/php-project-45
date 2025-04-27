@@ -6,7 +6,6 @@ use function BrainGames\Games\answerIsTrue;
 use function BrainGames\Games\makeQuestionGetAnswer;
 use function BrainGames\Games\greeting;
 use function cli\line;
-use function BrainGames\Games\congratulations;
 
 use const BrainGames\Games\MAX_GAME_ROUNDS;
 
@@ -50,5 +49,5 @@ function runGcd(): void
             return;
         }
     }
-    congratulations($name);
+    line("Congratulations, {$name}!");
 }
