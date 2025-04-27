@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\Even;
+namespace BrainGames\Games;
 
 use function BrainGames\Engine\answerIsTrue;
 use function BrainGames\Engine\makeQuestionGetAnswer;
