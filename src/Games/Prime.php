@@ -1,13 +1,10 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Prime;
 
-use function BrainGames\Games\answerIsTrue;
-use function BrainGames\Games\makeQuestionGetAnswer;
-use function BrainGames\Games\greeting;
-use function cli\line;
+use function BrainGames\Engine\runEngine;
 
-use const BrainGames\Games\MAX_GAME_ROUNDS;
+use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
 function isPrimeNumber(int $number): bool
 {
@@ -23,24 +20,19 @@ function isPrimeNumber(int $number): bool
 
 function runPrime(): void
 {
-    $name = showGreeting();
     $lastNumber = 0;
     $questionNumber = 0;
-    print_r("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
+    $flow['description'] = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+    $flow['questionData'] = [];
+    $flow['trueResult'] = [];
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         do {
             $lastNumber = $questionNumber;
             $questionNumber = rand(1, 20);
         } while ($questionNumber === $lastNumber);
-        $answer = makeQuestionGetAnswer((string)$questionNumber);
-        $result = isPrimeNumber($questionNumber) ? "yes" : "no";
-        if (answerIsTrue($result, $answer)) {
-            line("Correct!");
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.");
-            line("Let's try again, {$name}!");
-            return;
-        }
+        $flow['questionData'][] = $questionNumber;
+        $flow['trueResult'][] = isPrimeNumber($questionNumber) ? "yes" : "no";
     }
-    line("Congratulations, {$name}!");
+
+    runEngine($flow);
 }
