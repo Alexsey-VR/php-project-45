@@ -8,6 +8,7 @@ use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
 function runEven(): void
 {
+    $flow = [];
     $flow['description'] = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
     $flow['questionData'] = [];
     $flow['trueResult'] = [];

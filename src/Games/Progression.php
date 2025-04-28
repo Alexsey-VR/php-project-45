@@ -8,6 +8,7 @@ use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
 function runProgression(): void
 {
+    $flow = [];
     $flow['description'] = "What number is missing in the progression?";
     $flow['questionData'] = [];
     $flow['trueResult'] = [];

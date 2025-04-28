@@ -22,6 +22,7 @@ function runPrime(): void
 {
     $lastNumber = 0;
     $questionNumber = 0;
+    $flow = [];
     $flow['description'] = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
     $flow['questionData'] = [];
     $flow['trueResult'] = [];

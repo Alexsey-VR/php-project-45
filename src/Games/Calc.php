@@ -26,6 +26,7 @@ function computeOperation(
 
 function runCalc(): void
 {
+    $flow = [];
     $flow['description'] = "What is the result of the expression?";
     $flow['questionData'] = [];
     $flow['trueResult'] = [];
