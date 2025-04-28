@@ -1,13 +1,10 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Calc;
 
-use function BrainGames\Games\answerIsTrue as answerIsTrue;
-use function BrainGames\Games\makeQuestionGetAnswer as makeQuestionGetAnswer;
-use function BrainGames\Games\greeting as greeting;
-use function cli\line;
+use function BrainGames\Engine\runEngine;
 
-use const BrainGames\Games\MAX_GAME_ROUNDS as MAX_GAME_ROUNDS;
+use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
 function computeOperation(
     int $leftOperand,
@@ -29,23 +26,17 @@ function computeOperation(
 
 function runCalc(): void
 {
-    $name = showGreeting();
-
-    print_r("What is the result of the expression?\n");
+    $flow['description'] = "What is the result of the expression?";
+    $flow['questionData'] = [];
+    $flow['trueResult'] = [];
     $operators = ['+', '-', '*'];
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $a = rand(1, 100);
         $b = rand(1, 100);
-        $question = "{$a} {$operators[$i]} {$b}";
-        $answer = makeQuestionGetAnswer($question);
-        $result = computeOperation($a, $b, $operators[$i]);
-        if (answerIsTrue($result, $answer)) {
-            line("Correct!");
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.");
-            line("Let's try again, {$name}!");
-            return;
-        }
+        $flow['questionData'][] = "{$a} {$operators[$i]} {$b}";
+        $trueResult = computeOperation($a, $b, $operators[$i]);
+        $flow['trueResult'][] = $trueResult;
     }
-    line("Congratulations, {$name}!");
+
+    runEngine($flow);
 }
