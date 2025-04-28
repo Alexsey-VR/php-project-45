@@ -34,7 +34,8 @@ function answerIsTrue(string $trueResult, string $userResult): bool
     }
 }
 
-function runEngine($flow) {
+function runEngine($flow)
+{
     $name = getNameAndShowGreeting();
     line($flow['description']);
 
