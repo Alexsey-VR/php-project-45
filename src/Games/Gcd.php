@@ -1,13 +1,10 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Games\answerIsTrue;
-use function BrainGames\Games\makeQuestionGetAnswer;
-use function BrainGames\Games\greeting;
-use function cli\line;
+use function BrainGames\Engine\runEngine;
 
-use const BrainGames\Games\MAX_GAME_ROUNDS;
+use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
 function getInputsFromEuclidianGcd(int $a, int $b): array
 {
@@ -34,20 +31,14 @@ function getEuclidianGcd(int $a, int $b): int
 
 function runGcd(): void
 {
-    $name = showGreeting();
-    print_r("Find the greatest common divisor of given numbers.\n");
+    $flow['description'] = "Find the greatest common divisor of given numbers.";
+    $flow['questionData'] = [];
+    $flow['trueResult'] = [];
+
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $inputs = getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10));
-        $question = "{$inputs[0]} {$inputs[1]}";
-        $answer = makeQuestionGetAnswer($question);
-        $result = getEuclidianGcd($inputs[0], $inputs[1]);
-        if (answerIsTrue((string)$result, $answer)) {
-            line("Correct!");
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$result}'.");
-            line("Let's try again, {$name}!");
-            return;
-        }
+        $flow['questionData'][] = "{$inputs[0]} {$inputs[1]}";
+        $flow['trueResult'][] = getEuclidianGcd($inputs[0], $inputs[1]);
     }
-    line("Congratulations, {$name}!");
+    runEngine($flow);
 }
