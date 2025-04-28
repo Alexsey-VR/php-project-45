@@ -4,6 +4,7 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
+use function cli\input;
 
 const MAX_GAME_ROUNDS = 3;
 
@@ -19,7 +20,7 @@ function getNameAndShowGreeting(): string
 function makeQuestionGetAnswer(string $question): string
 {
     line("Question: {$question}");
-    $answer = prompt("Your answer");
+    $answer = input(); //prompt("Your answer");
     $answer = strtolower($answer);
 
     return $answer;
@@ -42,9 +43,9 @@ function runEngine($flow): void
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $answer = makeQuestionGetAnswer($flow['questionData'][$i]);
         if (answerIsTrue($flow['trueResult'][$i], $answer)) {
-            line("Correct!");
+            line("Your answer: Correct!");
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$flow['trueResult'][$i]}'.");
+            line("Your answer: '{$answer}' is wrong answer ;(. Correct answer was '{$flow['trueResult'][$i]}'.");
             line("Let's try again, {$name}!");
             return;
         }
