@@ -14,8 +14,7 @@ function isPrimeNumber(int $number): bool
     if (($number % 3 === 0) || ($number % 2 === 0)) {
         return false;
     }
-    return (((3 ** $number) % $number === 3) ||
-            ((2 ** ($number - 1)) % $number === 1)) ? true : false;
+    return true;
 }
 
 function runPrime(): void
