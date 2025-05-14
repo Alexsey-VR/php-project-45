@@ -8,7 +8,7 @@ use function cli\input;
 
 const MAX_GAME_ROUNDS = 3;
 
-function runEngine(array $flow): void
+function runGame(array $flow): void
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");

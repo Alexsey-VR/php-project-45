@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\runEngine;
+use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
@@ -39,5 +39,5 @@ function runCalc(): void
         $flow['trueResult'][] = $trueResult;
     }
 
-    runEngine($flow);
+    runGame($flow);
 }

@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Engine\runEngine;
+use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
@@ -41,5 +41,5 @@ function runGcd(): void
         $flow['questionData'][] = "{$inputs[0]} {$inputs[1]}";
         $flow['trueResult'][] = getEuclidianGcd($inputs[0], $inputs[1]);
     }
-    runEngine($flow);
+    runGame($flow);
 }

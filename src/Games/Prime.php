@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\runEngine;
+use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
@@ -34,5 +34,5 @@ function runPrime(): void
         $flow['trueResult'][] = isPrimeNumber($questionNumber) ? "yes" : "no";
     }
 
-    runEngine($flow);
+    runGame($flow);
 }
