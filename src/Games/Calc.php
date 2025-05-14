@@ -19,9 +19,8 @@ function computeOperation(
         case '*':
             return (string)($leftOperand * $rightOperand);
         default:
-            print_r("Operation '{$operator}' not permited\n");
+            throw new \Exception("Operation '{$operator}' not permitted\n");
     }
-    return '';
 }
 
 function runCalc(): void
@@ -31,12 +30,17 @@ function runCalc(): void
     $flow['questionData'] = [];
     $flow['trueResult'] = [];
     $operators = ['+', '-', '*'];
-    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
-        $a = rand(1, 100);
-        $b = rand(1, 100);
-        $flow['questionData'][] = "{$a} {$operators[$i]} {$b}";
-        $trueResult = computeOperation($a, $b, $operators[$i]);
-        $flow['trueResult'][] = $trueResult;
+    try {
+        for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
+            $a = rand(1, 100);
+            $b = rand(1, 100);
+            $flow['questionData'][] = "{$a} {$operators[$i]} {$b}";
+            $trueResult = computeOperation($a, $b, $operators[$i]);
+            $flow['trueResult'][] = $trueResult;
+        }
+    } catch (\Exception $e) {
+        print_r('Error in file ' . $e->getFile() . ' on line ' . $e->getLine() . ' : ' . $e->getMessage());
+        return;
     }
 
     runGame($flow);
