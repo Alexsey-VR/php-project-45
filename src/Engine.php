@@ -21,7 +21,7 @@ function runGame(array $flow): void
         $answer = input();
         $answer = strtolower($answer);
 
-        if (!strcmp($flow['trueResult'][$i], $answer)) {
+        if (strcmp($flow['trueResult'][$i], $answer) === 0) {
             line("Your answer: Correct!");
         } else {
             line("Your answer: '{$answer}' is wrong answer ;(. Correct answer was '{$flow['trueResult'][$i]}'.");
