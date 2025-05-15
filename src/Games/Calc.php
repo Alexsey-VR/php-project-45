@@ -25,23 +25,23 @@ function computeOperation(
 
 function runCalc(): void
 {
-    $flow = [];
-    $flow['description'] = "What is the result of the expression?";
-    $flow['questionData'] = [];
-    $flow['trueResult'] = [];
+    $flowSteps = [];
+    $flowSteps['description'] = "What is the result of the expression?";
+    $flowSteps['questionData'] = [];
+    $flowSteps['trueResult'] = [];
     $operators = ['+', '-', '*'];
     try {
         for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
             $a = rand(1, 100);
             $b = rand(1, 100);
-            $flow['questionData'][] = "{$a} {$operators[$i]} {$b}";
+            $flowSteps['questionData'][] = "{$a} {$operators[$i]} {$b}";
             $trueResult = computeOperation($a, $b, $operators[$i]);
-            $flow['trueResult'][] = (string)$trueResult;
+            $flowSteps['trueResult'][] = (string)$trueResult;
         }
     } catch (\Exception $e) {
         print_r('Error in file ' . $e->getFile() . ' on line ' . $e->getLine() . ' : ' . $e->getMessage());
         return;
     }
 
-    runGame($flow);
+    runGame($flowSteps);
 }
