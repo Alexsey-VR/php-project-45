@@ -6,6 +6,8 @@ use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\MAX_GAME_ROUNDS;
 
+const MAX_VALUE_IN_RANGE_FACTOR = 10;
+
 function runProgression(): void
 {
     $flowSteps = [];
@@ -15,7 +17,7 @@ function runProgression(): void
     for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
         $initValue = rand(1, 20);
         $stepValue = rand(1, 5);
-        $range = range($initValue, $initValue + 10 * $stepValue, $stepValue);
+        $range = range($initValue, $initValue + MAX_VALUE_IN_RANGE_FACTOR * $stepValue, $stepValue);
         $gapValue = rand(0, 9);
         $trueResult = $range[$gapValue];
         $range[$gapValue] = "..";
