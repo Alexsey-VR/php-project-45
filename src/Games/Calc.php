@@ -39,7 +39,7 @@ function runCalc(): void
             $flowSteps['trueResult'][] = (string)$trueResult;
         }
     } catch (\Exception $e) {
-        print_r('Error in file ' . $e->getFile() . ' on line ' . $e->getLine() . ' : ' . $e->getMessage());
+        print_r($e->getMessage());
         return;
     }
 
