@@ -4,7 +4,7 @@ namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\runGame;
 
-use const BrainGames\Engine\MAX_GAME_ROUNDS;
+use const BrainGames\Engine\GAMES_COUNT;
 
 function computeOperation(
     int $leftOperand,
@@ -31,7 +31,7 @@ function runCalc(): void
     $flowSteps['trueResult'] = [];
     $operators = ['+', '-', '*'];
     try {
-        for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
+        for ($i = 0; $i < GAMES_COUNT; $i++) {
             $a = rand(1, 100);
             $b = rand(1, 100);
             $flowSteps['questionData'][] = "{$a} {$operators[$i]} {$b}";

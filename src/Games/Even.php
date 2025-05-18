@@ -4,7 +4,7 @@ namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\runGame;
 
-use const BrainGames\Engine\MAX_GAME_ROUNDS;
+use const BrainGames\Engine\GAMES_COUNT;
 
 function runEven(): void
 {
@@ -13,7 +13,7 @@ function runEven(): void
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
 
-    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
+    for ($i = 0; $i < GAMES_COUNT; $i++) {
         $randValue = (string)rand(1, 100);
         $isEven = ($randValue + 1) % 2;
         $trueResult = ($isEven !== 0) ? "yes" : "no";

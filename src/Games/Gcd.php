@@ -4,7 +4,7 @@ namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\runGame;
 
-use const BrainGames\Engine\MAX_GAME_ROUNDS;
+use const BrainGames\Engine\GAMES_COUNT;
 
 function getInputsFromEuclidianGcd(int $a, int $b): array
 {
@@ -36,7 +36,7 @@ function runGcd(): void
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
 
-    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
+    for ($i = 0; $i < GAMES_COUNT; $i++) {
         $inputs = getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10));
         $flowSteps['questionData'][] = "{$inputs[0]} {$inputs[1]}";
         $flowSteps['trueResult'][] = getEuclidianGcd($inputs[0], $inputs[1]);

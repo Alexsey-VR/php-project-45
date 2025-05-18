@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\runGame;
 
-use const BrainGames\Engine\MAX_GAME_ROUNDS;
+use const BrainGames\Engine\GAMES_COUNT;
 
 const MAX_VALUE_IN_RANGE_FACTOR = 10;
 
@@ -14,7 +14,7 @@ function runProgression(): void
     $flowSteps['description'] = "What number is missing in the progression?";
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
-    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
+    for ($i = 0; $i < GAMES_COUNT; $i++) {
         $initValue = rand(1, 20);
         $stepValue = rand(1, 5);
         $range = range($initValue, $initValue + MAX_VALUE_IN_RANGE_FACTOR * $stepValue, $stepValue);

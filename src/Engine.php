@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function cli\input;
 
-const MAX_GAME_ROUNDS = 3;
+const GAMES_COUNT = 3;
 
 function runGame(array $flow): void
 {
@@ -16,7 +16,7 @@ function runGame(array $flow): void
 
     line($flow['description']);
 
-    for ($i = 0; $i < MAX_GAME_ROUNDS; $i++) {
+    for ($i = 0; $i < GAMES_COUNT; $i++) {
         line("Question: {$flow['questionData'][$i]}");
         $answer = input();
         $answer = strtolower($answer);
