@@ -21,8 +21,8 @@ function runPrime(): void
 {
     $lastNumber = 0;
     $questionNumber = 0;
+    $description = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
     $flowSteps = [];
-    $flowSteps['description'] = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
     for ($i = 0; $i < GAMES_COUNT; $i++) {
@@ -34,5 +34,5 @@ function runPrime(): void
         $flowSteps['trueResult'][] = isPrimeNumber($questionNumber) ? "yes" : "no";
     }
 
-    runGame($flowSteps);
+    runGame($description, $flowSteps);
 }

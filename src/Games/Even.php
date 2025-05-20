@@ -8,8 +8,8 @@ use const BrainGames\Engine\GAMES_COUNT;
 
 function runEven(): void
 {
+    $description = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
     $flowSteps = [];
-    $flowSteps['description'] = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
 
@@ -21,5 +21,5 @@ function runEven(): void
         $flowSteps['trueResult'][] = $trueResult;
     }
 
-    runGame($flowSteps);
+    runGame($description, $flowSteps);
 }

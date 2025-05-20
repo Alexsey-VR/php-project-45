@@ -8,13 +8,13 @@ use function cli\input;
 
 const GAMES_COUNT = 3;
 
-function runGame(array $flow): void
+function runGame(string $description, array $flow): void
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
     line("Hello, {$name}!");
 
-    line($flow['description']);
+    line($description);
 
     for ($i = 0; $i < GAMES_COUNT; $i++) {
         line("Question: {$flow['questionData'][$i]}");

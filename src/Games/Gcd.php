@@ -31,8 +31,8 @@ function getEuclidianGcd(int $a, int $b): int
 
 function runGcd(): void
 {
+    $description = "Find the greatest common divisor of given numbers.";
     $flowSteps = [];
-    $flowSteps['description'] = "Find the greatest common divisor of given numbers.";
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
 
@@ -41,5 +41,5 @@ function runGcd(): void
         $flowSteps['questionData'][] = "{$inputs[0]} {$inputs[1]}";
         $flowSteps['trueResult'][] = getEuclidianGcd($inputs[0], $inputs[1]);
     }
-    runGame($flowSteps);
+    runGame($description, $flowSteps);
 }

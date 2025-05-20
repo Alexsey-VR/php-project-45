@@ -25,8 +25,8 @@ function computeOperation(
 
 function runCalc(): void
 {
+    $description = "What is the result of the expression?";
     $flowSteps = [];
-    $flowSteps['description'] = "What is the result of the expression?";
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
     $operators = ['+', '-', '*'];
@@ -43,5 +43,5 @@ function runCalc(): void
         return;
     }
 
-    runGame($flowSteps);
+    runGame($description, $flowSteps);
 }

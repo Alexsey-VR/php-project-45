@@ -10,8 +10,8 @@ const MAX_VALUE_IN_RANGE_FACTOR = 10;
 
 function runProgression(): void
 {
+    $description = "What number is missing in the progression?";
     $flowSteps = [];
-    $flowSteps['description'] = "What number is missing in the progression?";
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
     for ($i = 0; $i < GAMES_COUNT; $i++) {
@@ -25,5 +25,5 @@ function runProgression(): void
         $flowSteps['trueResult'][] = $trueResult;
     }
 
-    runGame($flowSteps);
+    runGame($description, $flowSteps);
 }
