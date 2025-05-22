@@ -31,7 +31,7 @@ function makeStep($operator): array
     $b = rand(1, 100);
     return [
         'questionData' => "{$a} {$operator} {$b}",
-        'trueResult' => computeOperation($a, $b, $operator)
+        'trueResult' => (string)computeOperation($a, $b, $operator)
     ];
 }
 
