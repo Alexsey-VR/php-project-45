@@ -29,26 +29,21 @@ function getEuclidianGcd(int $a, int $b): int
     return $result;
 }
 
-function makeStep(): array
-{
-    $inputs = getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10));
-    return [
-        'questionData' => "{$inputs[0]} {$inputs[1]}",
-        'trueResult' => (string)getEuclidianGcd($inputs[0], $inputs[1])
-    ];
-}
-
 function runGcd(): void
 {
     $description = "Find the greatest common divisor of given numbers.";
-    $flowSteps = [];
-    $flowSteps['questionData'] = [];
-    $flowSteps['trueResult'] = [];
 
-    for ($i = 0; $i < GAMES_COUNT; $i++) {
-        $step = makeStep();
-        $flowSteps['questionData'][] = $step['questionData'];
-        $flowSteps['trueResult'][] = $step['trueResult'];
-    }
+    $collection = [
+        getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10)),
+        getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10)),
+        getInputsFromEuclidianGcd(rand(1, 10), rand(1, 10))
+    ];
+    $flowSteps = array_map(function ($item) {
+        return [
+            'questionData' => "{$item[0]} {$item[1]}",
+            'trueResult' => (string)getEuclidianGcd($item[0], $item[1])
+        ];
+    }, $collection);
+
     runGame($description, $flowSteps);
 }

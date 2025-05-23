@@ -17,14 +17,14 @@ function runGame(string $description, array $flow): void
     line($description);
 
     for ($i = 0; $i < GAMES_COUNT; $i++) {
-        line("Question: {$flow['questionData'][$i]}");
+        line("Question: {$flow[$i]['questionData']}");
         $answer = input();
         $answer = strtolower($answer);
 
-        if (strcmp($flow['trueResult'][$i], $answer) === 0) {
+        if (strcmp($flow[$i]['trueResult'], $answer) === 0) {
             line("Your answer: Correct!");
         } else {
-            line("Your answer: '{$answer}' is wrong answer ;(. Correct answer was '{$flow['trueResult'][$i]}'.");
+            line("Your answer: '{$answer}' is wrong answer ;(. Correct answer was '{$flow[$i]['trueResult']}'.");
             line("Let's try again, {$name}!");
             return;
         }

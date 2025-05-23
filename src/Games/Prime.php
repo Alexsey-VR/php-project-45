@@ -20,28 +20,16 @@ function isPrimeNumber(int $number): bool
     return true;
 }
 
-function makeStep(): array
-{
-    $questionNumber = rand(1, 20);
-    return [
-        'questionData' => (string)$questionNumber,
-        'trueResult' => isPrimeNumber($questionNumber) ? "yes" : "no"
-    ];
-}
-
 function runPrime(): void
 {
-    $lastNumber = 0;
-    $questionNumber = 0;
     $description = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
-    $flowSteps = [];
-    $flowSteps['questionData'] = [];
-    $flowSteps['trueResult'] = [];
-    for ($i = 0; $i < GAMES_COUNT; $i++) {
-        $step = makeStep();
-        $flowSteps['questionData'][] = $step['questionData'];
-        $flowSteps['trueResult'][] = $step['trueResult'];
-    }
+    $collection = [rand(1, 20), rand(1, 20), rand(1, 20)];
+    $flowSteps = array_map(function ($item) {
+        return [
+            'questionData' => (string)$item,
+            'trueResult' => isPrimeNumber($item) ? "yes" : "no"
+        ];
+    }, $collection);
 
     runGame($description, $flowSteps);
 }

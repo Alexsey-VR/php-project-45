@@ -6,8 +6,6 @@ use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\GAMES_COUNT;
 
-const OPERATORS = ['+', '-', '*'];
-
 function computeOperation(
     int $leftOperand,
     int $rightOperand,
@@ -25,16 +23,6 @@ function computeOperation(
     }
 }
 
-function makeStep(string $operator): array
-{
-    $a = rand(1, 100);
-    $b = rand(1, 100);
-    return [
-        'questionData' => "{$a} {$operator} {$b}",
-        'trueResult' => (string)computeOperation($a, $b, $operator)
-    ];
-}
-
 function runCalc(): void
 {
     $description = "What is the result of the expression?";
@@ -42,11 +30,15 @@ function runCalc(): void
     $flowSteps['questionData'] = [];
     $flowSteps['trueResult'] = [];
     try {
-        for ($i = 0; $i < GAMES_COUNT; $i++) {
-            $step = makeStep(OPERATORS[$i]);
-            $flowSteps['questionData'][] = $step['questionData'];
-            $flowSteps['trueResult'][] = $step['trueResult'];
-        }
+        $collection = ['+', '-', '*'];
+        $flowSteps = array_map(function ($operator) {
+            $a = rand(1, 100);
+            $b = rand(1, 100);
+            return [
+                'questionData' => "{$a} {$operator} {$b}",
+                'trueResult' => computeOperation($a, $b, $operator)
+            ];
+        }, $collection);
     } catch (\Exception $e) {
         print_r($e->getMessage());
         return;
