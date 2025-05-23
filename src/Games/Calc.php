@@ -25,7 +25,7 @@ function computeOperation(
     }
 }
 
-function makeStep($operator): array
+function makeStep(string $operator): array
 {
     $a = rand(1, 100);
     $b = rand(1, 100);
