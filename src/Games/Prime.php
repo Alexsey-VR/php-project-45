@@ -8,7 +8,10 @@ use const BrainGames\Engine\GAMES_COUNT;
 
 function isPrimeNumber(int $number): bool
 {
-    if (($number > 0) && ($number < 4)) {
+    if ($number == 1) {
+        return false;
+    }
+    if (($number > 1) && ($number < 4)) {
         return true;
     }
     if (($number % 3 === 0) || ($number % 2 === 0)) {
