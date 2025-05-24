@@ -8,18 +8,20 @@ use const BrainGames\Engine\GAMES_COUNT;
 
 function getInputsFromEuclidianGcd(int $a, int $b): array
 {
-    $input = [$a, $b];
-    sort($input);
-    $rem = $input[1] % $input[0];
-    $result = [$input[0] * rand(1, 5), ($input[1] + $rem) * rand(1, 5)];
+    $minValue = min($a, $b);
+    $maxValue = max($a, $b);
+    $rem = $maxValue % $minValue;
+    $result = [$minValue * rand(1, 5), ($maxValue + $rem) * rand(1, 5)];
     shuffle($result);
+
     return $result;
 }
 
 function getEuclidianGcd(int $a, int $b): int
 {
-    $input = [$a, $b];
-    sort($input);
+    $minValue = min($a, $b);
+    $maxValue = max($a, $b);
+    $input = [$minValue, $maxValue];
     do {
         $result = $input[0];
         $rem = $input[1] % $input[0];
