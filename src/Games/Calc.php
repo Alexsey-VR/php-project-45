@@ -21,6 +21,8 @@ function computeOperation(
         case OPERATORS[2]:
             return ($leftOperand * $rightOperand);
     }
+
+    return null;
 }
 
 function runCalc(): void
