@@ -12,7 +12,7 @@ function computeOperation(
     int $leftOperand,
     int $rightOperand,
     string $operator
-): int {
+): int | null {
     switch ($operator) {
         case OPERATORS[0]:
             return ($leftOperand + $rightOperand);
@@ -21,7 +21,7 @@ function computeOperation(
         case OPERATORS[2]:
             return ($leftOperand * $rightOperand);
         default:
-            return -1;
+            return null;
     }
 }
 
