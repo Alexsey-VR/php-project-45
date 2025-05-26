@@ -20,9 +20,9 @@ function computeOperation(
             return ($leftOperand - $rightOperand);
         case OPERATORS[2]:
             return ($leftOperand * $rightOperand);
+        default:
+            return -1;
     }
-
-    return null;
 }
 
 function runCalc(): void
